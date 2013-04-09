@@ -96,12 +96,14 @@ public class BlockBreaker extends AbstractSelfTriggeredIC {
         if (chest != null && chest.getTypeId() == BlockID.CHEST) {
             hasChest = true;
         }
-        //@TODO: add hashset for blocks that can't be broken, loaded in the config
-        if (broken == null || broken.getTypeId() == 0 || broken.getTypeId() == BlockID.BEDROCK || broken.getTypeId()
-                == BlockID.PISTON_MOVING_PIECE || broken.getTypeId()
-                == BlockID.ENDER_PORTAL || broken.getTypeId()
-                == BlockID.ENDER_PORTAL_FRAME)
+        /* unbreakable blocks */
+        if (broken == null || broken.getTypeId() == 0 
+                || broken.getTypeId() == BlockID.BEDROCK 
+                || broken.getTypeId() == BlockID.PISTON_MOVING_PIECE 
+                || broken.getTypeId() == BlockID.ENDER_PORTAL
+                || broken.getTypeId()== BlockID.ENDER_PORTAL_FRAME) {
             return false;
+        }
 
         if (id > 0 && id != broken.getTypeId()) return false;
 
