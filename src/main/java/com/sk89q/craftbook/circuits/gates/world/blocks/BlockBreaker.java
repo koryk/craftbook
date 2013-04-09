@@ -100,8 +100,8 @@ public class BlockBreaker extends AbstractSelfTriggeredIC {
         if (broken == null || broken.getTypeId() == 0 
                 || broken.getTypeId() == BlockID.BEDROCK 
                 || broken.getTypeId() == BlockID.PISTON_MOVING_PIECE 
-                || broken.getTypeId() == BlockID.ENDER_PORTAL
-                || broken.getTypeId()== BlockID.ENDER_PORTAL_FRAME) {
+                || broken.getTypeId() == BlockID.END_PORTAL
+                || broken.getTypeId() == BlockID.END_PORTAL_FRAME) {
             return false;
         }
 
